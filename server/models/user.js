@@ -38,6 +38,7 @@ const userSchema = new Schema(
       ref: 'User'
     }],
 
+    //DOCUMENTING PURPOSES ONLY. DO NOT INCLUDE as properties in typeDefs.js 
     location: String,
     primaryPosition: String,
     viewedProfile: String,

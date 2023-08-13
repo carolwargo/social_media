@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const dateFormat = require('../utils/dateFormat ');
+const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
@@ -9,7 +9,7 @@ const postSchema = new Schema(
         ref: "User",
         required: true,
       },
-      
+
       firstName: {
         type: String,
         required: true,

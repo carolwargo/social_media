@@ -93,8 +93,7 @@ const resolvers = {
       if (context.user) {
         //variables
           const newPost = await Post.create({
-            userId: context.user._id,   
-            location, 
+            authorId: context.user._id,   
             description,
             picturePath,
             userPicturePath,

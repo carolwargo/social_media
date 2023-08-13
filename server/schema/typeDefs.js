@@ -7,19 +7,23 @@ type User {
   lastname: String!
   email: String!
   password: String!
+    location: String
+    primaryPosition: String
+    viewedProfile: String
+    impressions: String
   picturePath: String
   friendList: [User]
 }
 
 type Post {
   _id: ID!
-  userId: User!
-  firstName: String
-  lastName: String!
-  description: String!
-  picturePath: String!
-  userPicturePath: String!
-  location: String!
+  authorId: User!
+  firstName: User!
+  lastName: User!
+    location: String!
+    description: String!
+    picturePath: String!
+    userPicturePath: String!
   likes: User!
   comments: [Comment]
   createdAt: Date!
@@ -29,9 +33,7 @@ type Comment {
   _id: ID!
   userId: User!
   postId: Post
-  firstName: String!
-  lastName: String!
-  comments: [Comment]
+  commentContent: [Comment]
   createdAt: String!
 }
 

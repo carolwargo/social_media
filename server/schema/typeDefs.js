@@ -8,22 +8,29 @@ type User {
   email: String!
   password: String!
   location: String
+  picturePath: String
+  friends: [User]
+  viewProfile: String
+  bio: String
   primaryPosition: String
   viewedProfile: String
   impressions: String
-  picturePath: String
-  friendList: [User]
+  createdAt: String!
+  updatedAt: String!
+
+ 
+  friends: [User]
 }
 
 type Post {
   _id: ID!
-  authorId: User!
+  userId: User!
   firstName: User!
   lastName: User!
   location: String!
-  postText: String!
+  description: String!
   picturePath: String!
-  postPicturePath: String!
+  userPicturePath: String!
   likes: User!
   comments: [Comment]
   createdAt: String!
@@ -33,7 +40,7 @@ type Comment {
   _id: ID!
   userId: User!
   postId: Post
-  commentContent: String!
+  comment: String!
 }
 
 type AuthData {
@@ -47,12 +54,12 @@ type Query {
   getAllPosts: [Post]
   userPosts(userId: ID!): [Post]
   userFriends(userId: ID!): [User]
-  getComment(commentId: ID!): Comment
+  getComments(commentId: ID!): Comment
 }
 
 type Mutation {
-  createPost(authorId: ID!, firstName: String!, lastName: String!, postText: String!, picturePath: String!,createdAt: String!): Post!
-  createComment(authorId: ID!, postId: ID!, commentContent: String!): Comment!
+  createPost(userId: ID!, firstName: String!, lastName: String!, description: String!, picturePath: String!,createdAt: String!): Post!
+  createComment(userId: ID!, postId: ID!, comment: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(firstName: String!, lastName: String!, email: String!, password: String!, location: String!, picturePath: String): AuthData!
   deletePost(postId: ID!): Post

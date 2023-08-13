@@ -28,10 +28,10 @@ export const SIGNUP_USER = gql`
 `;
 
 export const CREATE_POST = gql`
-mutation createPost($authorId: ID!, $title: String!, $postPicturePath: String!, $postText: String!) {
-  createPost(authorId: $authorId, title: $title, postPicturePath: $postPicturePath, postText: $postText) {
+mutation createPost($userId: ID!, $title: String!, $postPicturePath: String!, $postText: String!) {
+  createPost(userId: $userId, title: $title, postPicturePath: $postPicturePath, postText: $postText) {
     _id
-    authorId {
+    userId {
       _id
     }
     title
@@ -49,7 +49,7 @@ export const ADD_FRIEND = gql`
       friendId: $friendId
     ) {
       _id
-      friendList {
+      friends {
         _id
       }
     }

@@ -10,14 +10,14 @@ export const GET_POST = gql`
       postText
       picturePath
       postPicturePath
-      authorId {
+      userId {
         _id
         username
       }
       comments {
         _id
         content
-        authorId {
+        userId {
           _id
           username
         }
@@ -33,7 +33,7 @@ export const USER_POSTS = gql`
   query UserPosts($userId: ID!) {
     userPosts(userId: $userId) {
       _id
-      authorId {
+      userId {
         _id
       }
       firstName
@@ -58,7 +58,7 @@ export const GET_ALL_POSTS = gql`
         postText
         picturePath
         postPicturePath
-      authorId {
+      userId {
         _id
       }
       createdAt
@@ -78,7 +78,7 @@ export const YOUR_PROFILE = gql`
         lastName
       email
       picturePath
-      friendList {
+      friends {
         _id
       }
     }
@@ -94,7 +94,7 @@ query GetUser($userId: ID!) {
       firstName
         lastName
       email
-      friendList {
+      fri {
         _id
       }
     }

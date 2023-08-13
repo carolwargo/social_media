@@ -28,8 +28,8 @@ const resolvers = {
 
     // Get all friends of a single user
     userFriends: async (parent, { userId }) => {
-      const user = await User.findOne({ _id: userId }).populate("friendList");
-      return user.friendList;
+      const user = await User.findOne({ _id: userId }).populate("friends");
+      return user.friends;
     },
 
     // Get comments for a single post
@@ -78,8 +78,8 @@ const resolvers = {
       if (context.user && context.user._id === userId) {
         const user = await User.findOne({ _id: userId });
   
-        if (!user.friendList.includes(friendId)) {
-          user.friendList.push(friendId);
+        if (!user.friends.includes(friendId)) {
+          user.friends.push(friendId);
           await user.save();
         }
   
@@ -93,7 +93,7 @@ const resolvers = {
       if (context.user) {
         //variables
           const newPost = await Post.create({
-            authorId: context.user._id,   
+            userId: context.user._id,   
             postText,
             picturePath,
             postPicturePath,

@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
   {
-    userId: {
+    authorId: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "User",
@@ -20,7 +20,7 @@ const commentSchema = new Schema(
       maxlength: 280,
     },
     
-    lastEditedAt: {
+    createdAt: {
       type: Date,
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),

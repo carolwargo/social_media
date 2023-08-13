@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const dateFormat = require('../utils/dateFormat');
+const dateFormat = require('../utils/dateFormat ');
 
 const postSchema = new Schema(
   {
-    userId: {
-        type: String,
+    authorId: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
         required: true,
       },
+      
       firstName: {
         type: String,
         required: true,
@@ -21,21 +23,23 @@ const postSchema = new Schema(
       description: String,
       picturePath: String,
       userPicturePath: String,
-      
+
       likes: {
         type: Map,
         of: Boolean,
       },
+
       comments: {
-        type: Array,
-        default: [],
+        type: [Schema.Types.ObjectId],
+        ref: "Comment",
       },
 
-    createdAtAt: {
+      createdAt: {
         type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
       },
+
   },
 
   { timestamps: true }

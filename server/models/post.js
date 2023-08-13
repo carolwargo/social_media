@@ -5,36 +5,41 @@ const dateFormat = require('../utils/dateFormat');
 const postSchema = new Schema(
   {
     userId: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-
-    firstName: {
-      type: String,
-      required: true,
-    },
-
-    lastName: {
         type: String,
         required: true,
-    },
+      },
+      firstName: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
 
-    location: String,
-    description: String,
-    picturePath: String,
-    userPicturePath: String,
-    likes: {
+      location: String,
+      description: String,
+      picturePath: String,
+      userPicturePath: String,
+      
+      likes: {
         type: Map,
         of: Boolean,
-    },
-    
-    comments: {
+      },
+      comments: {
         type: Array,
         default: [],
-    },
+      },
+
+    createdAtAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
   },
+
   { timestamps: true }
+
 );
 
 module.exports = mongoose.model("Post", postSchema);

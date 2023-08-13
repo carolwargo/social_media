@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
   {
-    authorId: {
+    userId: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "User",

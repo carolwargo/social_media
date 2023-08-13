@@ -5,45 +5,46 @@ const bcrypt = require('bcrypt');
 //name, username, email, password, location, bio, profilePicId, connectionList
 const userSchema = new Schema(
   {
-    name: {
+    firstname: {
       type: String,
       required: true
     },
-    username: {
-      type: String,
-      required: true,
-      unique: true,
+
+    lastname: {
+        type: String,       
+        required: true
     },
+
     email: {
       type: String,
       required: true,
       unique: true,
       match: [/.+@.+\..+/, 'Must match an email address!'],
     },
+
     password: {
       type: String,
       required: true,
       minlength: 4,
     },
-    location: {
-        type: String,
-        required: true,
-    },
-    bio: {
+
+    picturePath: {
         type: String,
         required: true,
     },
 
-    profilePicId: {
-        type: String,
-        required: true,
-    },
-    
-    connectionList: [{
+    friendList: [{
       type: Schema.Types.ObjectId,
       ref: 'User'
     }],
+
+    location: String,
+    primaryPosition: String,
+    viewedProfile: String,
+    impressions: String,
   },
+  
+    { timestamps: true }
 );
 
 //encrypting password

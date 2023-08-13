@@ -89,14 +89,14 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
                     // parameters
-    createPost: async (parent, { location, description, picturePath, userPicturePath, likes, comments, createdAt }, context) => {
+    createPost: async (parent, {  postText, picturePath, postPicturePath, likes, comments, createdAt }, context) => {
       if (context.user) {
         //variables
           const newPost = await Post.create({
             authorId: context.user._id,   
-            description,
+            postText,
             picturePath,
-            userPicturePath,
+            postPicturePath,
             likes, 
             comments,
             createdAt

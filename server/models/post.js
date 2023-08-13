@@ -20,9 +20,9 @@ const postSchema = new Schema(
       },
 
       location: String,
-      description: String,
+      postText: String,
       picturePath: String,
-      userPicturePath: String,
+      postPicturePath: String,
 
       likes: {
         type: Map,

@@ -21,9 +21,9 @@ type Post {
   firstName: User!
   lastName: User!
     location: String!
-    description: String!
+    postText: String!
     picturePath: String!
-    userPicturePath: String!
+    postPicturePath: String!
   likes: User!
   comments: [Comment]
   createdAt: String!
@@ -51,7 +51,7 @@ type Query {
 }
 
 type Mutation {
-  createPost(authorId: ID!, firstName: String!, lastName: String!, description: String!, picturePath: String!,createdAt: String!): Post!
+  createPost(authorId: ID!, firstName: String!, lastName: String!, postText: String!, picturePath: String!,createdAt: String!): Post!
   createComment(authorId: ID!, postId: ID!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(firstName: String!, lastName: String!, email: String!, password: String!, location: String!, picturePath: String): AuthData!

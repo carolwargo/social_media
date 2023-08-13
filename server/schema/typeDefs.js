@@ -7,10 +7,10 @@ type User {
   lastname: String!
   email: String!
   password: String!
-    location: String
-    primaryPosition: String
-    viewedProfile: String
-    impressions: String
+  location: String
+  primaryPosition: String
+  viewedProfile: String
+  impressions: String
   picturePath: String
   friendList: [User]
 }
@@ -20,10 +20,10 @@ type Post {
   authorId: User!
   firstName: User!
   lastName: User!
-    location: String!
-    postText: String!
-    picturePath: String!
-    postPicturePath: String!
+  location: String!
+  postText: String!
+  picturePath: String!
+  postPicturePath: String!
   likes: User!
   comments: [Comment]
   createdAt: String!

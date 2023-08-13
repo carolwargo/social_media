@@ -5,6 +5,12 @@ const bcrypt = require('bcrypt');
 //name, username, email, password, location, bio, profilePicId, connectionList
 const userSchema = new Schema(
   {
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
+
     firstname: {
       type: String,
       required: true
@@ -33,18 +39,50 @@ const userSchema = new Schema(
         required: true,
     },
 
-    friendList: [{
+    friends: [{
       type: Schema.Types.ObjectId,
       ref: 'User'
     }],
 
-    //DOCUMENTING PURPOSES ONLY. DO NOT INCLUDE as properties in typeDefs.js 
-    location: String,
-    primaryPosition: String,
-    viewedProfile: String,
-    impressions: String,
-  },
-  
+    location: {
+      type: String,
+      required: true,
+    },
+
+    bio: {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 280,
+    },
+
+    primaryPosition: {
+      type: String,
+      required: true,
+    },
+
+    viewedProfile: {
+      type: String,
+      required: true,
+    },
+
+    impressions: {
+      type: String,
+      required: true,
+    },
+
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    },
+
+    updatedAt: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    },
+  }, 
     { timestamps: true }
 );
 

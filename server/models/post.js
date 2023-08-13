@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
-    authorId: {
+    userId: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true,
@@ -14,15 +14,26 @@ const postSchema = new Schema(
         type: String,
         required: true,
       },
+      
       lastName: {
         type: String,
         required: true,
       },
 
-      location: String,
-      postText: String,
+      location: {
+        type: String,
+        required: true,
+      },
+
+      description: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+        },
+
       picturePath: String,
-      postPicturePath: String,
+      userPicturePath: String,
 
       likes: {
         type: Map,
@@ -40,8 +51,12 @@ const postSchema = new Schema(
       get: (timestamp) => dateFormat(timestamp),
       },
 
-  },
-
+      updatedAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+     },
+    },
   { timestamps: true }
 
 );

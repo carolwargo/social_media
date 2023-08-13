@@ -183,9 +183,10 @@ export const posts = [
       [userIds[4], true],
     ]),
     comments: [
-      "random comment",
-      "another random comment",
-      "yet another random comment",
+        "Take me out to the ballgame!",
+        "Is it 1, 2 or 3 strikes?",
+        "Buy me some peanuts and cracker jacks!",
+        "Rooting for the home team!",
     ],
   },
   {
@@ -205,10 +206,9 @@ export const posts = [
       [userIds[2], true],
     ]),
     comments: [
-      "one more random comment",
-      "and another random comment",
-      "no more random comments",
-      "I lied, one more random comment",
+        "Take me out to the ballgame!",
+        "Buy me some peanuts and cracker jacks!",
+        "Rooting for the home team!",
     ],
   },
   {
@@ -228,11 +228,10 @@ export const posts = [
       [userIds[5], true],
     ]),
     comments: [
-      "one more random comment",
-      "I lied, one more random comment",
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "I'm bored",
+        "Is it 1, 2 or 3 strikes?",
+        "Buy me some peanuts and cracker jacks!",
+        "Rooting for the home team!",
+        "Play ball!",
     ],
   },
   {
@@ -251,12 +250,11 @@ export const posts = [
       [userIds[3], true],
     ]),
     comments: [
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "I'm bored",
-      "I'm still bored",
-      "All I want to do is play video games",
-      "I'm going to play video games",
+        "Take me out to the ballgame!",
+        "Is it 1, 2 or 3 strikes?",
+        "Buy me some peanuts and cracker jacks!",
+        "Rooting for the home team!",
+        "Play ball!",
     ],
   },
   {
@@ -276,11 +274,10 @@ export const posts = [
       [userIds[7], true],
     ]),
     comments: [
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "Man I'm bored",
-      "What should I do?",
-      "I'm going to play video games",
+      "Is it 1, 2 or 3 strikes?",
+      "Buy me some peanuts and cracker jacks!",
+      "Rooting for the home team!",
+      "Play ball!",
     ],
   },
   {
@@ -291,7 +288,7 @@ export const posts = [
     location: "Cincinatti, OH",
     description:
       "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
-    picturePath: "post6.jpeg",
+    picturePath: "post6.png",
     userPicturePath: "p9.png",
     likes: new Map([
       [userIds[1], true],
@@ -299,11 +296,8 @@ export const posts = [
     ]),
 
     comments: [
-      "Can I play video games now?",
-      "No let's actually study",
-      "Never mind, I'm going to play video games",
-      "Stop it.",
-      "Michael, stop it.",
+        "Take me out to the ballgame!",
+        "Play ball!",
     ],
   },
 ];

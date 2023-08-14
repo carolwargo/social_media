@@ -13,7 +13,7 @@ const commentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Post",
     },
-    comment: {
+    commentText: {
       type: String,
       required: true,
       minlength: 1,
@@ -25,6 +25,12 @@ const commentSchema = new Schema(
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
     },
+
+    updatedAt: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+  },
   },
   { timestamps: true }
 );

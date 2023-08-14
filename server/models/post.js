@@ -40,7 +40,7 @@ const postSchema = new Schema(
         of: Boolean,
       },
 
-      comments: {
+      comment: {
         type: [Schema.Types.ObjectId],
         ref: "Comment",
       },
@@ -56,7 +56,12 @@ const postSchema = new Schema(
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
      },
-    },
+     createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    }
+  },
   { timestamps: true }
 
 );

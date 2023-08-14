@@ -31,13 +31,15 @@ type Post {
   likes: User!
   comments: [Comment]
   createdAt: String!
+  updatedAt: String!
 }
 
 type Comment {
   _id: ID!
   userId: User!
   postId: Post
-  comment: String!
+  commentContent: String!
+  authorName: String!
 }
 
 type AuthData {
@@ -51,12 +53,12 @@ type Query {
   getAllPosts: [Post]
   userPosts(userId: ID!): [Post]
   userFriends(userId: ID!): [User]
-  getComments(commentId: ID!): Comment
+  getComment(commentId: ID!): Comment
 }
 
 type Mutation {
-  createPost(userId: ID!, firstName: String!, lastName: String!, description: String!, picturePath: String!,createdAt: String!): Post!
-  createComment(userId: ID!, postId: ID!, comment: String!): Comment!
+  createPost(userId: ID!, firstName: String!, lastName: String!, description: String!, picturePath: String!,createdAt: String!, updateAt: String!): Post!
+  createComment(userId: ID!, postId: ID!,authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(firstName: String!, lastName: String!, email: String!, password: String!, location: String!, picturePath: String): AuthData!
   deletePost(postId: ID!): Post

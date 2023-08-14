@@ -10,8 +10,8 @@ type User {
   picturePath: String!
   friends: [User]
       location: String!
-      viewedProfile: Number!
-      impressions: Number!
+      viewedProfile: Integer!
+      impressions: Integer!
 }
 
 type Post {

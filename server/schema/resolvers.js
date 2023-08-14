@@ -1,7 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
-/*const { text } = require("express");*/
+const { text } = require("express");
 
 const resolvers = {
   Query: {
@@ -88,17 +88,18 @@ const resolvers = {
   
       throw new AuthenticationError('You need to be logged in!');
     },
-                    // parameters
-    createPost: async (parent, {  postText, picturePath, postPicturePath, likes, comments, createdAt }, context) => {
+    
+    // CREATE POST
+    createPost: async (parent, {  caption: picturePath, postPicturePath, likes, comments, createdAt }, context) => {
       if (context.user) {
         //variables
           const newPost = await Post.create({
-            userId: context.user._id,   
-            postText,
+            userId: context.user._id,
+            firstName,
+            lastName,
+            caption,
             picturePath,
             postPicturePath,
-            likes, 
-            comments,
             createdAt
           });
   

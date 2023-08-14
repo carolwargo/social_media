@@ -173,7 +173,7 @@ export const posts = [
     firstName: "Will",
     lastName: "Smith",
     location: "Los Angeles, CA",
-    description: "Some really long random description",
+   caption : "Some really long random caption",
     picturePath: "post1.png",
     userPicturePath: "p3.png",
     likes: new Map([
@@ -195,8 +195,8 @@ export const posts = [
     firstName: "Adley",
     lastName: "Rutschman",
     location: "Baltimore, MD",
-    description:
-      "Another really long random description. This one is longer than the previous one.",
+    caption:
+      "Another really long random caption. This one is longer than the previous one.",
     picturePath: "post2.png",
     userPicturePath: "p6.png",
     likes: new Map([
@@ -217,8 +217,8 @@ export const posts = [
     firstName: "Pudge",
     lastName: "Rodriguez",
     location: "Detroit, MI",
-    description:
-      "This is the last really long random description. This one is longer than the previous one.",
+    caption:
+      "This is the last really long random caption. This one is longer than the previous one.",
     picturePath: "post3.png",
     userPicturePath: "p5.png",
     likes: new Map([
@@ -240,8 +240,8 @@ export const posts = [
     firstName: "Wilson",
     lastName: "Contreras",
     location: "St. Louis, MO",
-    description:
-      "This is the last really long random description. This one is longer than the previous one. Man I'm bored. I'm going to keep typing until I run out of things to say.",
+    caption:
+      "This is the last really long random caption. This one is longer than the previous one. Man I'm bored. I'm going to keep typing until I run out of things to say.",
     picturePath: "post4.png",
     userPicturePath: "p7.png",
     likes: new Map([
@@ -263,8 +263,8 @@ export const posts = [
     firstName: "Sean",
     lastName: "Murphy",
     location: "Atlanta, GA",
-    description:
-      "Just a short description. I'm tired of typing. I'm going to play video games now.",
+    caption:
+      "Just a short caption. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post5.png",
     userPicturePath: "p8.png",
     likes: new Map([
@@ -286,7 +286,7 @@ export const posts = [
     firstName: "Tyler",
     lastName: "Stephenson",
     location: "Cincinatti, OH",
-    description:
+    caption:
       "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post6.png",
     userPicturePath: "p9.png",

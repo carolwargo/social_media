@@ -33,11 +33,14 @@ const userSchema = new Schema(
       type: String,
       default: "",
     },
+    location: {
+      type: String,
+      default: "",
+    },
     friends: {
       type: Array,
       default: [],
     },
-    location: String,
     bio: String,
     viewedProfile: Number,
     impressions: Number,

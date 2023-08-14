@@ -42,8 +42,8 @@ const userSchema = new Schema(
       default: [],
     },
     bio: String,
-    viewedProfile: Integer,
-    impressions: Integer,
+    viewedProfile: String,
+    impressions: String,
   },
   { timestamps: true }
 );

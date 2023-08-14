@@ -17,9 +17,6 @@ type User {
   impressions: String
   createdAt: String!
   updatedAt: String!
-
- 
-  friends: [User]
 }
 
 type Post {

@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+MONGODB TUTORIAL
+<https://www.bing.com/videos/search?q=how+to+seed+mongoatlas+tutorial&&view=detail&mid=04F9C09F0A79B5AEAF7504F9C09F0A79B5AEAF75&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Dhow%2520to%2520seed%2520mongoatlas%2520tutorial%26%26FORM%3DVDVVXX>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

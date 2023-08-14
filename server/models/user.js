@@ -5,85 +5,44 @@ const bcrypt = require('bcrypt');
 //name, username, email, password, location, bio, profilePicId, connectionList
 const userSchema = new Schema(
   {
-    userId: {
-      type: Schema.Types.ObjectId,
-      required: true,
-      ref: 'User',
-    },
 
-    firstname: {
+    firstName: {
       type: String,
-      required: true
+      required: true,
+      min: 2,
+      max: 50,
     },
-
-    lastname: {
-        type: String,       
-        required: true
+    lastName: {
+      type: String,
+      required: true,
+      min: 2,
+      max: 50,
     },
-
     email: {
       type: String,
       required: true,
+      max: 50,
       unique: true,
-      match: [/.+@.+\..+/, 'Must match an email address!'],
     },
-
     password: {
       type: String,
       required: true,
-      minlength: 4,
+      min: 5,
     },
-
     picturePath: {
-        type: String,
-        required: true,
-    },
-
-    friends: [{
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }],
-
-    location: {
       type: String,
-      required: true,
+      default: "",
     },
-
-    bio: {
-      type: String,
-      required: true,
-      minlength: 1,
-      maxlength: 280,
+    friends: {
+      type: Array,
+      default: [],
     },
-
-    primaryPosition: {
-      type: String,
-      required: true,
-    },
-
-    viewedProfile: {
-      type: String,
-      required: true,
-    },
-
-    impressions: {
-      type: String,
-      required: true,
-    },
-
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-
-    updatedAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-  }, 
-    { timestamps: true }
+    location: String,
+    bio: String,
+    viewedProfile: Number,
+    impressions: Number,
+  },
+  { timestamps: true }
 );
 
 //encrypting password

@@ -20,17 +20,11 @@ const commentSchema = new Schema(
       maxlength: 280,
     },
     
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-
     updatedAt: {
       type: Date,
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
-  },
+    },
   },
   { timestamps: true }
 );

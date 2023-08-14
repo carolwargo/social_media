@@ -10,6 +10,9 @@ const resolvers = {
     getUser: async (parent, { userId }) => {
       return await User.findOne({ _id: userId });
     },
+    getAllUsers: async () => {
+      return await User.find();
+    },
 
     // Get all posts from all user
     getAllPosts: async () => {

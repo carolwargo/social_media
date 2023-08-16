@@ -186,7 +186,7 @@ export const posts = [
     ]),
     comments: [
         "Take me out to the ballgame!",
-        "Is it 1, 2 or 3 strikes?",
+        "Is it 1, 2 or 3 strikes until you're out?",
         "Buy me some peanuts and cracker jacks!",
         "Rooting for the home team!",
     ],
@@ -220,7 +220,7 @@ export const posts = [
     lastName: "Rodriguez",
     location: "Detroit, MI",
     caption:
-      "This is the last really long random caption. This one is longer than the previous one.",
+     "",
     picturePath: "post3.png",
     userPicturePath: "p5.png",
     likes: new Map([

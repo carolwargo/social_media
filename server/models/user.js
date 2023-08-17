@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
-//name, username, email, password, location, bio, profilePicId, connectionList
 const userSchema = new Schema(
   {
-
     firstName: {
       type: String,
       required: true,
@@ -33,19 +31,15 @@ const userSchema = new Schema(
       type: String,
       default: "",
     },
-    location: {
-      type: String,
-      default: "",
-    },
     friends: {
       type: Array,
       default: [],
     },
-    bio: String,
-    viewedProfile: String,
-    impressions: String,
+    location: String,
+    occupation: String,
+    viewedProfile: Number,
+    impressions: Number,
   },
-  { timestamps: true }
 );
 
 //encrypting password

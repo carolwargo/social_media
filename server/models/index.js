@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 // Models
-const User = require('./user');
-const Post = require('./post');
-const Comment = require('./comment');
+const User = require('./User');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 // Initialize all models
 const initModels = () => {
